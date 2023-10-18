@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RIGESTER FORM</title>
+</head>
+<body>
+
+<form action="register" method="post">
+    {%csrf_token%}
+    <label for="FirstName"><b>FirstName</b></label>
+    <input type="text" placeholder="Enter FirstName" name="first_name" id="email" required><br/>
+    <label for="LastName"><b>LastName</b></label>
+    <input type="text" placeholder="Enter LastName" name="last_name" id="email" required><br/>
+    <label for="UserName"><b>UserName</b></label>
+    <input type="text" placeholder="Enter UserName" name="username" id="email" required><br/>
+    <label for="Email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" id="email" required><br/>
+    <label for="Password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password1" id="psw" required><br/>
+    <label for="Confirm_Password"><b>Confirm_Password</b></label>
+    <input type="password" placeholder="Enter again" name="password2" id="psw-repeat" required><br/>
+
+    <button type="submit">Register</button>
+    <label>
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  
+</form>
+<div>
+  {% for message in messages %}
+  <h3>{{message}}</h3>
+  {% endfor %}
+</div>
+</body>
+</html>
